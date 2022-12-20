@@ -7,6 +7,12 @@ const rl = readline.createInterface({
   output: process.stdout,
 });
 
+
+
+
+
+
+
 // An object that represents the three stacks of Towers of Hanoi;
 // * each key is an array of Numbers:
 // * A is the far-left,
@@ -16,12 +22,27 @@ const rl = readline.createInterface({
 // * 4 is the largest,
 // * 1 is the smallest
 
+
+
+
+
 let stacks = {
   a: [4, 3, 2, 1],
   b: [],
   c: [],
 };
+
+
 let gathered = "";
+
+
+
+
+
+
+
+
+
 
 // Start here. What is this function doing?
 const printStacks = () => {
@@ -30,11 +51,21 @@ const printStacks = () => {
   console.log("c: " + stacks.c);
 };
 
+
+
+
+
+
 // Next, what do you think this function should do?
 const movePiece = (firstStack, lastStack) => {
   gathered = stacks[firstStack].pop();
   stacks[lastStack].push(gathered);
 };
+
+
+
+
+
 
 // Before you move, should you check if the move it actually allowed? Should 3 be able to be stacked on 2
 const isLegal = (first, last) => {
@@ -48,6 +79,10 @@ const isLegal = (first, last) => {
   }
 };
 
+
+
+
+
 //valid input format and check
 const validInput = (input1, input2) => {
   if (
@@ -59,6 +94,11 @@ const validInput = (input1, input2) => {
     return false;
   }
 };
+
+
+
+
+
 
 //logic to check current array vs win-state
 
@@ -87,6 +127,12 @@ function isPrimitive(obj) {
   return obj !== Object(obj);
 }
 
+
+
+
+
+
+
 // check for win
 const checkForWin = () => {
   if (
@@ -105,6 +151,13 @@ const checkForWin = () => {
   }
 };
 
+
+
+
+
+
+
+
 // When is this function called? What should it do with its argument?
 const towersOfHanoi = (firstStack, lastStack) => {
   let input1 = firstStack.toLowerCase();
@@ -121,6 +174,10 @@ const towersOfHanoi = (firstStack, lastStack) => {
   }
 };
 
+
+
+
+
 const getPrompt = () => {
   printStacks();
   rl.question("first stack: ", (firstStack) => {
@@ -130,6 +187,13 @@ const getPrompt = () => {
     });
   });
 };
+
+
+
+
+
+
+
 
 // Tests
 
