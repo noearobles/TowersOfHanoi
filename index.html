@@ -1,25 +1,83 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta charset="utf-8">
+    <meta charset="utf-8" />
     <title></title>
-    <script src="index.js"></script>
-    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" type="text/css" href="style.css" />
   </head>
   <body>
-    <h1>Towers Of Hanoi</h1>
-    <hr/>
-      <div id="top-row" data-row="top" class="red row" onclick="selectRow(this)"></div>
-      <div id="middle-row" data-row="middle" class="yellow row" onclick="selectRow(this)"></div>
-      <div id="bottom-row" class="green row" data-row="bottom" onclick="selectRow(this)">
-        <div id="4" data-size="4" data-color="yellow" class="stone" ></div>
-        <div id="3" data-size="3" data-color="red" class="stone" ></div>
-        <div id="2" data-size="2" data-color="green" class="stone" ></div>
-        <div id="1" data-size="1" data-color="blue" class="stone" ></div>
+    <div id="container">
+      <div class="hub">
+        <h3>Move Count: <span id="move-count"></span></h3>
+        <button onclick="executeHanoi()">Start</button>
+        <button id="reset-button" onclick="resetGame()">Reset</button>
+        <label
+          >No. of Disks<select id="diskSelectList">
+            <option value="5">5 disks</option>
+            <option value="4">4 disks</option>
+            <option value="3">3 disks</option>
+          </select>
+        </label>
       </div>
-    <hr/>
+      <div id="bar0" data-row="0" class="row0">
+        <img src="Bar.png" />
+      </div>
+
+      <div id="bar1" data-row="1" class="row1">
+        <img src="Bar.png" />
+      </div>
+
+      <div id="bar2" data-row="2" class="row2">
+        <img src="Bar.png" />
+      </div>
+      <div id="bottombar"></div>
+
+      <div
+        class="disk"
+        id="disk0"
+        data-size="0"
+        data-color="blue"
+        onclick="selectedDisk(this)"
+      >
+        <img class="insideImg" style="left: 94px" src="Bar2.png" />
+      </div>
+      <div
+        class="disk"
+        id="disk1"
+        data-size="1"
+        data-color="green"
+        onclick="selectedDisk(this)"
+      >
+        <img class="insideImg" style="left: 74px" src="Bar2.png" />
+      </div>
+      <div
+        class="disk"
+        id="disk2"
+        data-size="2"
+        data-color="red"
+        onclick="selectedDisk(this)"
+      >
+        <img class="insideImg" style="left: 54px" src="Bar2.png" />
+      </div>
+      <div
+        class="disk"
+        id="disk3"
+        data-size="3"
+        data-color="turqoise"
+        onclick="selectedDisk(this)"
+      >
+        <img class="insideImg" style="left: 34px" src="Bar2.png" />
+      </div>
+      <div
+        class="disk"
+        id="disk4"
+        data-size="4"
+        data-color="yellow"
+        onclick="selectedDisk(this)"
+      >
+        <img class="insideImg" style="left: 14px" src="Bar2.png" />
+      </div>
+    </div>
+    <script src="index.js"></script>
   </body>
 </html>
-
-
-

@@ -1,62 +1,125 @@
-[data-row] {
+body {
   display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  height: 34px;
-  margin: 25px;
-  border: 1px solid lightgray;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+}
+h3 {
+  display: inline;
+}
+#container {
+  position: absolute;
+  top: 30px;
+  left: 20px;
+  border: 1px solid black;
+  height: 350px;
+  width: 760px;
 }
 
-.row {
-  z-index: -10;
+#bar0 {
+  position: absolute;
+  top: 100px;
+  left: 130px;
+  height: 200px;
+  width: 30px;
 }
 
-[data-row].red {
-  background-color: #f6c5c5;
+#bar1 {
+  position: absolute;
+  top: 100px;
+  left: 360px;
+  height: 200px;
+  width: 30px;
 }
 
-[data-row].yellow {
-  background-color: #ffffa9;
+#bar2 {
+  position: absolute;
+  top: 100px;
+  left: 600px;
+  height: 200px;
+  width: 30px;
 }
 
-[data-row].green {
-  background-color: #baf6ba;
-}
-
-[data-row].blue {
-  background-color: aliceblue;
-}
-
-.stone {
+.disk {
+  padding: 0;
+  margin: 0;
+  position: absolute;
+  border: 1px solid gray;
+  height: 26px;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  border-radius: 4px;
   z-index: 10;
 }
 
-[data-color] {
-  width: 25px;
-  float: left;
+/* left of disk0 at 35px; left = 130 (bar0 left) -w/2 + 15 (bar width/2)  */
+#disk0 {
+  top: 274px;
+  left: 35px;
+  background: #ddeefe;
+  width: 220px;
+}
+#disk1 {
+  top: 248px;
+  left: 55px;
+  background: #ceeddf;
+  width: 180px;
+}
+#disk2 {
+  top: 222px;
+  left: 75px;
+  background: #feeeef;
+  width: 140px;
+}
+#disk3 {
+  top: 196px;
+  left: 95px;
+  background: #eefeff;
+  width: 100px;
+}
+#disk4 {
+  top: 170px;
+  left: 115px;
+  background: #eefecc;
+  width: 60px;
 }
 
-[data-color="blue"] {
-  height: 33px;
-  background-color: blue;
+#bottombar {
+  position: absolute;
+  top: 300px;
+  left: 10px;
+  background: #222;
+  border: 1px solid black;
+  height: 30px;
+  width: 740px;
 }
 
-[data-color="green"] {
-  height: 33px;
-  background-color: green;
+label {
+  float: right;
+  width: 100px;
+  margin-top: 8px;
 }
 
-[data-color="red"] {
-  height: 33px;
-  background-color: red;
+button {
+  float: right;
+  margin-top: 26px;
+  margin-right: 16px;
+  padding: 2px 8px;
+  height: 28px;
 }
 
-[data-color="yellow"] {
-  height: 33px;
-  background-color: yellow;
-}
+img {
+  height: 200px;
+  width: 30px;
+  padding: 0;
+  margin: 0;
+} /* for towers (bars) */
 
-#announce-game-won {
-  font-size: 50px;
-  text-align: center;
+.insideImg {
+  z-index: 100;
+  position: absolute;
+  border: 0;
+  top: -1px;
+  height: 14px;
+  width: 30px;
 }
